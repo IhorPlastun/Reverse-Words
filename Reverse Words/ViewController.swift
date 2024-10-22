@@ -9,8 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private var state:ReverseState = .initial{
+        didSet{
+            changeState()
+        }
+    }
     private var reversedString = ""
     private var isReversed:Bool = false
+    private var bottomButtonConstraint:NSLayoutConstraint?
     
     private let titleLabel:UILabel = {
         var label = UILabel()
@@ -63,48 +69,101 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.isUserInteractionEnabled = false
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector (reverseString), for: .touchUpInside)
+        button.addTarget(self, action: #selector (handleButtonTap), for: .touchUpInside)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(gesture)
+        self.stringTextField.delegate = self
+        
         setupUI()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        state = .initial
     }
     
-    @objc func reverseString() {
-        if isReversed{
-            reverseButton.setTitle("Reverse", for: .normal)
-            stringTextField.text = ""
-            reverseStringLabel.text = ""
-            reversedString = ""
-            bottomLine.backgroundColor = .lightGray
-            reverseButton.alpha = 0.5
-            reverseButton.isUserInteractionEnabled = false
-            isReversed.toggle()
+    @objc func dismissKeyboard(){
+        self.view.endEditing(true)
+    }
+    
+    @objc func handleButtonTap() {
+        if state == .typing{
+            state = .result
+        }else if state == .result{
+            state = .initial
+        }
+
+    }
+    
+  
+    
+    @objc func textFieldDidChange() {
+        if stringTextField.text == ""{
+            state = .initial
         }else{
-            if let str = stringTextField.text{
-                let words = str.split(separator: " ")
-                let reverseWords = words.map{String($0.reversed())}
-                reversedString = reverseWords.joined(separator: " ")
-                reverseStringLabel.text = reversedString
-                bottomLine.backgroundColor = .lightGray
-                reverseButton.setTitle("Clear", for: .normal)
-                
-                isReversed.toggle()
+            state = .typing
+        }
+        
+    }
+    
+
+    
+    @objc func keyboardWillShow(notification:Notification) {
+        if let keyboardFreme = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            let keyboardHeight = keyboardFreme.height
+            
+            bottomButtonConstraint?.constant = -keyboardHeight
+            
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
             }
         }
     }
     
-    @objc func textFieldDidChange() {
-        if stringTextField.text == "" {
+    @objc func keyboardWillHide() {
+        bottomButtonConstraint?.constant = -40
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func changeState(){
+        switch state {
+        case .initial:
             reverseButton.alpha = 0.5
             reverseButton.isUserInteractionEnabled = false
+            reverseButton.setTitle("Reverse", for: .normal)
+
+            stringTextField.text = ""
+            
             bottomLine.backgroundColor = .lightGray
-        }else{
+          
+            reverseStringLabel.text = ""
+        case .typing:
             reverseButton.alpha = 1
             reverseButton.isUserInteractionEnabled = true
+            reverseButton.setTitle("Reverse", for: .normal)
             bottomLine.backgroundColor = .blue
+        case .result:
+            reverseButton.setTitle("Clear", for: .normal)
+            reverseString()
+        }
+    }
+    
+    func reverseString() {
+        if let str = stringTextField.text{
+            let words = str.split(separator: " ")
+            let reverseWords = words.map{String($0.reversed())}
+            reversedString = reverseWords.joined(separator: " ")
+            reverseStringLabel.text = reversedString
+          
         }
     }
 
@@ -138,14 +197,21 @@ class ViewController: UIViewController {
             reverseStringLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             reverseStringLabel.widthAnchor.constraint(equalToConstant: view.frame.width - 30),
             
-            
-            reverseButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
             reverseButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             reverseButton.widthAnchor.constraint(equalToConstant: view.frame.width - 30),
             reverseButton.heightAnchor.constraint(equalToConstant: 50)
             
         ])
+        
+        bottomButtonConstraint = reverseButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
+        bottomButtonConstraint?.isActive = true
     }
 
 }
 
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}

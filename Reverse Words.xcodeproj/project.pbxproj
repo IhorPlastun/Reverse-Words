@@ -6,30 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AB08DCB92CC6DD430090E103 /* ReverseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCB82CC6DD430090E103 /* ReverseState.swift */; };
+		AB08DCC42CC6DD510090E103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCBA2CC6DD510090E103 /* AppDelegate.swift */; };
+		AB08DCC52CC6DD510090E103 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCC12CC6DD510090E103 /* SceneDelegate.swift */; };
+		AB08DCC62CC6DD510090E103 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCC22CC6DD510090E103 /* ViewController.swift */; };
+		AB08DCC72CC6DD510090E103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB08DCBB2CC6DD510090E103 /* Assets.xcassets */; };
+		AB08DCC92CC6DD510090E103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB08DCBE2CC6DD510090E103 /* LaunchScreen.storyboard */; };
+		AB08DCCA2CC6DD510090E103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB08DCC02CC6DD510090E103 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		AB08DC8F2CC680CE0090E103 /* Reverse Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reverse Words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB08DCB82CC6DD430090E103 /* ReverseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseState.swift; sourceTree = "<group>"; };
+		AB08DCBA2CC6DD510090E103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB08DCBB2CC6DD510090E103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB08DCBC2CC6DD510090E103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB08DCBD2CC6DD510090E103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AB08DCBF2CC6DD510090E103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AB08DCC12CC6DD510090E103 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AB08DCC22CC6DD510090E103 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		AB08DCA12CC680CF0090E103 /* Exceptions for "Reverse Words" folder in "Reverse Words" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = AB08DC8E2CC680CE0090E103 /* Reverse Words */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		AB08DC912CC680CE0090E103 /* Reverse Words */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				AB08DCA12CC680CF0090E103 /* Exceptions for "Reverse Words" folder in "Reverse Words" target */,
-			);
-			path = "Reverse Words";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AB08DC8C2CC680CE0090E103 /* Frameworks */ = {
@@ -45,7 +42,7 @@
 		AB08DC862CC680CE0090E103 = {
 			isa = PBXGroup;
 			children = (
-				AB08DC912CC680CE0090E103 /* Reverse Words */,
+				AB08DCC32CC6DD510090E103 /* Reverse Words */,
 				AB08DC902CC680CE0090E103 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +53,21 @@
 				AB08DC8F2CC680CE0090E103 /* Reverse Words.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AB08DCC32CC6DD510090E103 /* Reverse Words */ = {
+			isa = PBXGroup;
+			children = (
+				AB08DCBA2CC6DD510090E103 /* AppDelegate.swift */,
+				AB08DCBB2CC6DD510090E103 /* Assets.xcassets */,
+				AB08DCBC2CC6DD510090E103 /* Info.plist */,
+				AB08DCBE2CC6DD510090E103 /* LaunchScreen.storyboard */,
+				AB08DCC02CC6DD510090E103 /* Main.storyboard */,
+				AB08DCC12CC6DD510090E103 /* SceneDelegate.swift */,
+				AB08DCC22CC6DD510090E103 /* ViewController.swift */,
+				AB08DCB82CC6DD430090E103 /* ReverseState.swift */,
+			);
+			path = "Reverse Words";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +84,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				AB08DC912CC680CE0090E103 /* Reverse Words */,
 			);
 			name = "Reverse Words";
 			packageProductDependencies = (
@@ -122,6 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB08DCC72CC6DD510090E103 /* Assets.xcassets in Resources */,
+				AB08DCC92CC6DD510090E103 /* LaunchScreen.storyboard in Resources */,
+				AB08DCCA2CC6DD510090E103 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +144,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB08DCB92CC6DD430090E103 /* ReverseState.swift in Sources */,
+				AB08DCC42CC6DD510090E103 /* AppDelegate.swift in Sources */,
+				AB08DCC52CC6DD510090E103 /* SceneDelegate.swift in Sources */,
+				AB08DCC62CC6DD510090E103 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AB08DCBE2CC6DD510090E103 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB08DCBD2CC6DD510090E103 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AB08DCC02CC6DD510090E103 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB08DCBF2CC6DD510090E103 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AB08DCA32CC680CF0090E103 /* Debug */ = {
