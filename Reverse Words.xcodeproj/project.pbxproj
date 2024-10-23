@@ -10,10 +10,11 @@
 		AB08DCB92CC6DD430090E103 /* ReverseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCB82CC6DD430090E103 /* ReverseState.swift */; };
 		AB08DCC42CC6DD510090E103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCBA2CC6DD510090E103 /* AppDelegate.swift */; };
 		AB08DCC52CC6DD510090E103 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCC12CC6DD510090E103 /* SceneDelegate.swift */; };
-		AB08DCC62CC6DD510090E103 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCC22CC6DD510090E103 /* ViewController.swift */; };
+		AB08DCC62CC6DD510090E103 /* ReverseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCC22CC6DD510090E103 /* ReverseViewController.swift */; };
 		AB08DCC72CC6DD510090E103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB08DCBB2CC6DD510090E103 /* Assets.xcassets */; };
 		AB08DCC92CC6DD510090E103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB08DCBE2CC6DD510090E103 /* LaunchScreen.storyboard */; };
 		AB08DCCA2CC6DD510090E103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB08DCC02CC6DD510090E103 /* Main.storyboard */; };
+		AB08DCCF2CC9344C0090E103 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCCE2CC9344C0090E103 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,8 @@
 		AB08DCBD2CC6DD510090E103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB08DCBF2CC6DD510090E103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB08DCC12CC6DD510090E103 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB08DCC22CC6DD510090E103 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB08DCC22CC6DD510090E103 /* ReverseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseViewController.swift; sourceTree = "<group>"; };
+		AB08DCCE2CC9344C0090E103 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,25 @@
 		AB08DCC32CC6DD510090E103 /* Reverse Words */ = {
 			isa = PBXGroup;
 			children = (
+				AB08DCCD2CC92F410090E103 /* Manager */,
+				AB08DCC22CC6DD510090E103 /* ReverseViewController.swift */,
+				AB08DCB82CC6DD430090E103 /* ReverseState.swift */,
 				AB08DCBA2CC6DD510090E103 /* AppDelegate.swift */,
+				AB08DCC12CC6DD510090E103 /* SceneDelegate.swift */,
 				AB08DCBB2CC6DD510090E103 /* Assets.xcassets */,
 				AB08DCBC2CC6DD510090E103 /* Info.plist */,
 				AB08DCBE2CC6DD510090E103 /* LaunchScreen.storyboard */,
 				AB08DCC02CC6DD510090E103 /* Main.storyboard */,
-				AB08DCC12CC6DD510090E103 /* SceneDelegate.swift */,
-				AB08DCC22CC6DD510090E103 /* ViewController.swift */,
-				AB08DCB82CC6DD430090E103 /* ReverseState.swift */,
 			);
 			path = "Reverse Words";
+			sourceTree = "<group>";
+		};
+		AB08DCCD2CC92F410090E103 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AB08DCCE2CC9344C0090E103 /* Service.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +157,9 @@
 			files = (
 				AB08DCB92CC6DD430090E103 /* ReverseState.swift in Sources */,
 				AB08DCC42CC6DD510090E103 /* AppDelegate.swift in Sources */,
+				AB08DCCF2CC9344C0090E103 /* Service.swift in Sources */,
 				AB08DCC52CC6DD510090E103 /* SceneDelegate.swift in Sources */,
-				AB08DCC62CC6DD510090E103 /* ViewController.swift in Sources */,
+				AB08DCC62CC6DD510090E103 /* ReverseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
