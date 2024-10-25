@@ -64,7 +64,6 @@ final class ReverseViewController: UIViewController {
         segment.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.5)
         segment.selectedSegmentTintColor = .systemBlue
         segment.translatesAutoresizingMaskIntoConstraints = false
-        
         return segment
     }()
     
