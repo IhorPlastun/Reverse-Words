@@ -7,27 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB08DCB92CC6DD430090E103 /* ReverseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCB82CC6DD430090E103 /* ReverseState.swift */; };
 		AB08DCC42CC6DD510090E103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCBA2CC6DD510090E103 /* AppDelegate.swift */; };
 		AB08DCC52CC6DD510090E103 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCC12CC6DD510090E103 /* SceneDelegate.swift */; };
 		AB08DCC62CC6DD510090E103 /* ReverseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCC22CC6DD510090E103 /* ReverseViewController.swift */; };
 		AB08DCC72CC6DD510090E103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB08DCBB2CC6DD510090E103 /* Assets.xcassets */; };
 		AB08DCC92CC6DD510090E103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB08DCBE2CC6DD510090E103 /* LaunchScreen.storyboard */; };
-		AB08DCCA2CC6DD510090E103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB08DCC02CC6DD510090E103 /* Main.storyboard */; };
-		AB08DCCF2CC9344C0090E103 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCCE2CC9344C0090E103 /* Service.swift */; };
+		AB08DCCF2CC9344C0090E103 /* ReverseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08DCCE2CC9344C0090E103 /* ReverseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB08DC8F2CC680CE0090E103 /* Reverse Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reverse Words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB08DCB82CC6DD430090E103 /* ReverseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseState.swift; sourceTree = "<group>"; };
 		AB08DCBA2CC6DD510090E103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB08DCBB2CC6DD510090E103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB08DCBC2CC6DD510090E103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB08DCBD2CC6DD510090E103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AB08DCBF2CC6DD510090E103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB08DCC12CC6DD510090E103 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AB08DCC22CC6DD510090E103 /* ReverseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseViewController.swift; sourceTree = "<group>"; };
-		AB08DCCE2CC9344C0090E103 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		AB08DCCE2CC9344C0090E103 /* ReverseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,25 +56,47 @@
 		AB08DCC32CC6DD510090E103 /* Reverse Words */ = {
 			isa = PBXGroup;
 			children = (
-				AB08DCCD2CC92F410090E103 /* Manager */,
-				AB08DCC22CC6DD510090E103 /* ReverseViewController.swift */,
-				AB08DCB82CC6DD430090E103 /* ReverseState.swift */,
-				AB08DCBA2CC6DD510090E103 /* AppDelegate.swift */,
-				AB08DCC12CC6DD510090E103 /* SceneDelegate.swift */,
-				AB08DCBB2CC6DD510090E103 /* Assets.xcassets */,
+				AB08DCD02CCB90DE0090E103 /* Application */,
+				AB08DCD42CCB91420090E103 /* Views */,
+				AB08DCCD2CC92F410090E103 /* Managers */,
+				AB08DCD22CCB91040090E103 /* Resources */,
 				AB08DCBC2CC6DD510090E103 /* Info.plist */,
-				AB08DCBE2CC6DD510090E103 /* LaunchScreen.storyboard */,
-				AB08DCC02CC6DD510090E103 /* Main.storyboard */,
 			);
 			path = "Reverse Words";
 			sourceTree = "<group>";
 		};
-		AB08DCCD2CC92F410090E103 /* Manager */ = {
+		AB08DCCD2CC92F410090E103 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				AB08DCCE2CC9344C0090E103 /* Service.swift */,
+				AB08DCCE2CC9344C0090E103 /* ReverseManager.swift */,
 			);
-			path = Manager;
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		AB08DCD02CCB90DE0090E103 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AB08DCC12CC6DD510090E103 /* SceneDelegate.swift */,
+				AB08DCBA2CC6DD510090E103 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		AB08DCD22CCB91040090E103 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB08DCBE2CC6DD510090E103 /* LaunchScreen.storyboard */,
+				AB08DCBB2CC6DD510090E103 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AB08DCD42CCB91420090E103 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB08DCC22CC6DD510090E103 /* ReverseViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +162,6 @@
 			files = (
 				AB08DCC72CC6DD510090E103 /* Assets.xcassets in Resources */,
 				AB08DCC92CC6DD510090E103 /* LaunchScreen.storyboard in Resources */,
-				AB08DCCA2CC6DD510090E103 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,9 +172,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB08DCB92CC6DD430090E103 /* ReverseState.swift in Sources */,
 				AB08DCC42CC6DD510090E103 /* AppDelegate.swift in Sources */,
-				AB08DCCF2CC9344C0090E103 /* Service.swift in Sources */,
+				AB08DCCF2CC9344C0090E103 /* ReverseManager.swift in Sources */,
 				AB08DCC52CC6DD510090E103 /* SceneDelegate.swift in Sources */,
 				AB08DCC62CC6DD510090E103 /* ReverseViewController.swift in Sources */,
 			);
@@ -172,14 +188,6 @@
 				AB08DCBD2CC6DD510090E103 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		AB08DCC02CC6DD510090E103 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB08DCBF2CC6DD510090E103 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -197,7 +205,6 @@
 				INFOPLIST_FILE = "Reverse Words/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
@@ -226,7 +233,6 @@
 				INFOPLIST_FILE = "Reverse Words/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
